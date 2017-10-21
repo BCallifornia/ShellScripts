@@ -1,12 +1,23 @@
 #!/usr/bin/env bash
+# --------------------------------------------------------------------------------------------
+# Description:
+#   Installs Percona (MySQL) Server
+#
+# Version: 0.0.5
+#
+# Author:
+#   Brandon Callifornia https://github.com/BCallifornia
+#
+# --------------------------------------------------------------------------------------------
+
 # Installation Script for Percona (MySQL) Server
 clear
 echo "Setting DEBIAN_FRONTEND to noninteractive"
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 VERSION="trusty"
 PERCONA_PW=$1
 DEBCONF_PREFIX="percona-server-server-5.6 percona-server-server"
- 
+
 [ ! $# -eq 1 ] && echo "Usage: $0 PASSWORD" && exit 1;
 echo "Installing Repository Key!"
 sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
