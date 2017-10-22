@@ -16,3 +16,4 @@ sudo chown minio:minio minio.new
 sudo chmod +x minio.new
 sudo mv /usr/local/bin/minio ./minio_"$(date -r $OLDFILE +"%Y%m%d%H%M")"
 sudo mv minio.new /usr/local/bin/minio
+sudo service minio start
